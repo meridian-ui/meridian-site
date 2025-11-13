@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import CopyIcon from "@/components/CopyIcon";
 import CheckIcon from "@/components/CheckIcon";
+import { LayoutTransitionAnimation } from "@/components/LayoutTransitionAnimation";
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
@@ -37,24 +38,27 @@ export default function Home() {
           opacity: 0.04,
         }}
       />
-      <div className="relative z-10 flex flex-col items-center">
-        <div className="flex items-center gap-8 justify-center">
-          <img src="/logo.svg" alt="Meridian" className="h-36" />
-          <h1 className="text-9xl tracking-[-0.07em]">Meridian</h1>
+      <div className="flex">
+        <div className="relative pr-[7vw] z-10 flex flex-col items-center">
+          <div className="flex items-center gap-8 justify-center">
+            <img src="/logo.svg" alt="Meridian" className="h-36" />
+            <h1 className="text-9xl tracking-[-0.07em]">Meridian</h1>
+          </div>
+          <p className="mt-8">
+            A design framework for Malleable Overview-Detail Interfaces
+          </p>
+          <div className="mt-8 flex items-center gap-2 bg-foreground shadow-xl  rounded-xl  font-mono text-sm">
+            <span className="text-background px-6 py-4">{installCommand}</span>
+            <button
+              onClick={handleCopy}
+              className="ml-4 p-2 mr-2 hover:bg-background/10 cursor-pointer rounded transition-colors text-background"
+              aria-label={copied ? "Copied!" : "Copy to clipboard"}
+            >
+              {copied ? <CheckIcon /> : <CopyIcon />}
+            </button>
+          </div>
         </div>
-        <p className="mt-8">
-          A design framework for Malleable Overview-Detail Interfaces
-        </p>
-        <div className="mt-8 flex items-center gap-2 bg-foreground shadow-xl  rounded-xl  font-mono text-sm">
-          <span className="text-background px-6 py-4">{installCommand}</span>
-          <button
-            onClick={handleCopy}
-            className="ml-4 p-2 mr-2 hover:bg-background/10 cursor-pointer rounded transition-colors text-background"
-            aria-label={copied ? "Copied!" : "Copy to clipboard"}
-          >
-            {copied ? <CheckIcon /> : <CopyIcon />}
-          </button>
-        </div>
+        <LayoutTransitionAnimation />
       </div>
     </div>
   );
