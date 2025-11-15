@@ -38,9 +38,9 @@ export default function Home() {
           opacity: 0.04,
         }}
       />
-      <div className="flex">
-        <div className="relative pr-[7vw] z-10 flex flex-col items-center">
-          <div className="flex items-center gap-8 justify-center">
+      <div className="flex flex-col-reverse items-center justify-center">
+        <div className="relative pt-[11vh] z-10 flex flex-col items-center">
+          <div className="flex items-center gap-8 justify-center select-none">
             <img src="/logo.svg" alt="Meridian" className="h-36" />
             <h1 className="text-9xl tracking-[-0.07em]">Meridian</h1>
           </div>

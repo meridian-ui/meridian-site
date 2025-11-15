@@ -9,7 +9,7 @@ import {
   Attribute,
 } from "@meridian-ui/meridian";
 import { useCallback, useEffect, useState } from "react";
-import { MalleabilitySemZoom } from "@/app/d2-3/[id]/malleability-semzoom";
+import { MalleabilitySemZoom } from "@/views/d2-3/malleability-semzoom";
 
 export interface DetailThesaurus extends DetailViewConfig {
   type: "thesaurus";

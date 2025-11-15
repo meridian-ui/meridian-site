@@ -14,7 +14,7 @@ export default function R1() {
   return (
     <div>
       <button
-        className="w-[20px] h-[20px] hover:bg-zinc-300 bg-white"
+        className="w-[20px] h-[20px] hover:bg-zinc-300 dark:hover:bg-zinc-700 bg-white dark:bg-gray-900"
         onClick={() => {
           if (odi) {
             setTimeout(() => {

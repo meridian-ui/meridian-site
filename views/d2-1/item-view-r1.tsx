@@ -41,7 +41,7 @@ export const ItemViewR1 = ({
     return (
       <div
         key={item.itemId}
-        className="w-[270px] h-full flex-1 flex flex-col gap-2 justify-center items-center text-center bg-slate-50 rounded-2xl p-4"
+        className="w-[270px] h-full flex-1 flex flex-col gap-2 justify-center items-center text-center bg-slate-50 dark:bg-slate-800 rounded-2xl p-4"
       >
         <Attribute
           className="thumbnail max-w-[260px] w-full aspect-[11/12] rounded-lg "
@@ -95,7 +95,7 @@ export const ItemViewR1 = ({
 
   return (
     <div className="relative w-[270px] flex-1 flex flex-col gap-2">
-      <div className="w-full bg-slate-50 rounded-2xl thumbnail-area aspect-[1/1]">
+      <div className="w-full bg-slate-50 dark:bg-slate-800 rounded-2xl thumbnail-area aspect-[1/1]">
         {/* Thumbnail */}
         <Attribute
           className="thumbnail"
@@ -143,7 +143,7 @@ export const ItemViewR1 = ({
                 options={options}
                 attribute={getAttributesByRole(item, "rating")}
               />
-              <div className="w-[2px] flex-1 h-[12px] border-l border-gray-500"></div>
+              <div className="w-[2px] flex-1 h-[12px] border-l border-gray-500 dark:border-gray-400"></div>
               <Attribute
                 className=""
                 options={options}
@@ -191,7 +191,7 @@ export const ItemViewR1 = ({
         {/* Footer */}
         <div className="my-1">
           <Attribute
-            className="text-xs text-gray-500"
+            className="text-xs text-gray-500 dark:text-gray-400"
             options={options}
             attribute={getAttributesByRole(item, "footer")}
           />
@@ -207,7 +207,7 @@ export const ItemViewR1 = ({
               </label>
             </div>
             <div className="text-red-500">
-              <div className="bg-slate-50 rounded-full p-1">
+              <div className="bg-slate-50 dark:bg-slate-800 rounded-full p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -221,7 +221,7 @@ export const ItemViewR1 = ({
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-300 my-2"></div>
+          <div className="border-t border-gray-300 dark:border-gray-700 my-2"></div>
           <div className="text-xs font-bold text-[#0057B8] flex flex-row justify-between">
             See device offers
           </div>

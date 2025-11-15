@@ -19,9 +19,9 @@ export default function R3Detail() {
         <h1 className="text-xl font-bold">
           We don't have "{itemId}" in our demo data.
         </h1>
-        <p className="text-gray-500">Please try another word.</p>
+        <p className="text-gray-500 dark:text-gray-400">Please try another word.</p>
         <button
-          className="bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition-colors px-3 py-1 rounded-md cursor-pointer"
+          className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 active:bg-gray-400 dark:active:bg-gray-500 transition-colors px-3 py-1 rounded-md cursor-pointer"
           onClick={() => router.back()}
         >
           Go back
