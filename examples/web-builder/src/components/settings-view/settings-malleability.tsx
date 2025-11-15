@@ -1,5 +1,5 @@
-import { defaultMalleabilityDimension } from "../../../../../src/renderer/renderer.defaults";
-import { MalleableDimension } from "../../../../../src/spec/spec";
+import { defaultMalleabilityDimension } from "@meridian-ui/meridian";
+import { MalleableDimension } from "@meridian-ui/meridian";
 import { SettingComponent } from "./setting-component";
 import { useODI } from "meridian/src/store/odi.store";
 

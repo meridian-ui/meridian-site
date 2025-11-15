@@ -2,12 +2,9 @@ import {
   itemViewTypesMap,
   overviewTypesMap,
   roleTypesMap,
-} from "../../../../../src/renderer/renderer.defaults";
+} from "@meridian-ui/meridian";
 
-import {
-  AttributeSelectionScope,
-  OverviewConfig,
-} from "../../../../../src/spec/spec";
+import { AttributeSelectionScope, OverviewConfig } from "@meridian-ui/meridian";
 import { useODI } from "meridian/src/store/odi.store";
 import { SettingComponent } from "./setting-component";
 import { customOverviews } from "@/meridian-views/views.index";

@@ -3,13 +3,13 @@ import {
   detailViewTypesMap,
   DetailViewTypeConfig,
   roleTypesMap,
-} from "../../../../../src/renderer/renderer.defaults";
+} from "@meridian-ui/meridian";
 import {
   DetailViewConfig,
   OpenViewIn,
   OpenViewBy,
   AttributeSelectionScope,
-} from "../../../../../src/spec/spec";
+} from "@meridian-ui/meridian";
 import { SettingComponent } from "./setting-component";
 import { useODI } from "meridian/src/store/odi.store";
 
