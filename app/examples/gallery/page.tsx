@@ -26,7 +26,7 @@ export default function Home() {
         </h1>
         <div className="flex flex-col gap-3">
           <a
-            href="/d1-1"
+            href="/examples/gallery/d1-1"
             className="p-4 bg-gray-50 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-300 flex items-center"
           >
             <span className="font-medium">
@@ -35,7 +35,7 @@ export default function Home() {
             <ChevronIcon />
           </a>
           <a
-            href="/d1-2"
+            href="/examples/gallery/d1-2"
             className="p-4 bg-gray-50 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-300 flex items-center"
           >
             <span className="font-medium">
@@ -44,14 +44,14 @@ export default function Home() {
             <ChevronIcon />
           </a>
           <a
-            href="/d2-3/sophistication"
+            href="/examples/gallery/d2-3/sophistication"
             className="p-4 bg-gray-50 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-300 flex items-center"
           >
             <span className="font-medium">Semantic Zooming (Thesaurus)</span>
             <ChevronIcon />
           </a>
           <a
-            href="/d2-2"
+            href="/examples/gallery/d2-2"
             className="p-4 bg-gray-50 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-300 flex items-center"
           >
             <span className="font-medium">
@@ -67,7 +67,7 @@ export default function Home() {
         </h1>
         <div className="flex flex-col gap-3">
           <a
-            href="/d2-1"
+            href="/examples/gallery/d2-1"
             className="p-4 bg-gray-50 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-300 flex items-center"
           >
             <span className="font-medium">
@@ -76,14 +76,14 @@ export default function Home() {
             <ChevronIcon />
           </a>
           <a
-            href="/d2-2"
+            href="/examples/gallery/d2-2"
             className="p-4 bg-gray-50 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-300 flex items-center"
           >
             <span className="font-medium">Example 2: Soccer Match Players</span>
             <ChevronIcon />
           </a>
           <a
-            href="/d2-3/sophistication"
+            href="/examples/gallery/d2-3/sophistication"
             className="p-4 bg-gray-50 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-300 flex items-center"
           >
             <span className="font-medium">

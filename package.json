@@ -9,11 +9,15 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@meridian-ui/meridian": "^1.0.3",
+    "@vis.gl/react-google-maps": "^1.5.2",
     "next": "16.0.1",
     "nextra": "^4.6.0",
     "nextra-theme-docs": "^4.6.0",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "sass": "^1.94.0",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
