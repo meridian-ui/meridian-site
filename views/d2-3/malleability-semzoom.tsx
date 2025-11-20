@@ -44,6 +44,25 @@ export const MalleabilitySemZoom = ({
 
   return (
     <div className="absolute bottom-0 left-0 flex flex-row gap-4 p-4 bg-zinc-100 dark:bg-zinc-800 m-4 rounded-lg">
+      {/* Pinch Gesture Indicator */}
+      <div className="absolute -top-12 left-0 right-0 flex items-center justify-center gap-2 bg-zinc-100 dark:bg-zinc-800 px-4 py-2 rounded-lg shadow-sm">
+        <svg
+          className="w-5 h-5 text-zinc-600 dark:text-zinc-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"
+          />
+        </svg>
+        <span className="text-sm text-zinc-600 dark:text-zinc-400">
+          Pinch to zoom
+        </span>
+      </div>
       {/* Vertical Slider */}
       <div className="h-[210px] w-[30px] flex items-center justify-center relative">
         <input

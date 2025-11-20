@@ -38,12 +38,21 @@ export const DetailThesaurus = ({
   ]);
 
   const handleWheel = useCallback((e: React.WheelEvent) => {
-    if (e.ctrlKey || e.metaKey) {
+    // Check for pinch gesture (ctrlKey is set by browser for trackpad pinch)
+    if (e.ctrlKey) {
       e.preventDefault();
       e.stopPropagation();
-      setZoomLevel((prev) => Math.max(prev + e.deltaY / 300, 1));
+
+      // Negative deltaY = zoom in (pinch out), positive = zoom out (pinch in)
+      const delta = -e.deltaY / 100;
+      console.log('Zoom gesture detected:', { deltaY: e.deltaY, delta, currentZoom: zoomLevel });
+      setZoomLevel((prev) => {
+        const newZoom = Math.max(prev + delta, 1);
+        const maxZoom = attributeOrder.length - 1;
+        return Math.min(newZoom, maxZoom);
+      });
     }
-  }, []);
+  }, [zoomLevel, attributeOrder]);
 
   useEffect(() => {
     // Prevent parent scrolling when zooming

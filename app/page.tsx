@@ -57,6 +57,20 @@ export default function Home() {
               {copied ? <CheckIcon /> : <CopyIcon />}
             </button>
           </div>
+          <div className="mt-6 flex items-center gap-4">
+            <Link
+              href="/docs"
+              className="px-8 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-colors font-medium shadow-lg"
+            >
+              Documentation
+            </Link>
+            <Link
+              href="/examples/gallery"
+              className="px-8 py-3 border-2 border-foreground text-foreground rounded-xl hover:bg-foreground hover:text-background transition-colors font-medium"
+            >
+              Examples
+            </Link>
+          </div>
         </div>
         <LayoutTransitionAnimation />
       </div>
