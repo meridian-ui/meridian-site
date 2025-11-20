@@ -1,8 +1,5 @@
-import {
-  AdvancedMarker,
-  APIProvider,
-  Map,
-} from "@vis.gl/react-google-maps";
+"use client";
+
 import {
   MeridianItem,
   OverviewConfig,
@@ -12,13 +9,15 @@ import {
   ViewOptions,
   FetchedAttributeValueType,
 } from "@meridian-ui/meridian";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import { renderToString } from "react-dom/server";
 // import { useDragStore } from '@/store/drag.store';
 
 export interface OverviewMapType extends OverviewConfig {
   type: "map";
-  // positions: { lat: number; lng: number }[];
-  // googleMapsAPIKey: string | undefined;
   itemView: { type: "pin" };
   details: [
     {
@@ -42,12 +41,9 @@ export const mapDefault: Partial<OverviewMapType> = {
 
 interface MapAttributes {
   coordinates: (Position | undefined)[];
-  googleMapsAPIKey: string | undefined;
 }
 
 const getMapData = (items: FetchedItemType[]): MapAttributes => {
-  let googleMapsAPIKey: string | undefined;
-
   const coordinates = items.map((item) => {
     // Collect coordinates from internalAttributes
     const latAttribute = item.internalAttributes?.find(
@@ -58,8 +54,6 @@ const getMapData = (items: FetchedItemType[]): MapAttributes => {
       (attr) => attr && typeof attr === "object" && attr.label === "lng"
     );
 
-    // console.log('latAttribute', latAttribute, item);
-
     const numberCoordinate = {
       lat: parseFloat(
         (latAttribute as FetchedAttributeValueType)?.value ?? "0"
@@ -69,32 +63,11 @@ const getMapData = (items: FetchedItemType[]): MapAttributes => {
       ),
     };
 
-    // Check for Google Maps API Key in internalAttributes (if defined that way)
-    if (!googleMapsAPIKey && item.internalAttributes) {
-      const apiKeyAttr = item.internalAttributes.find(
-        (attr) =>
-          attr && typeof attr === "object" && attr.id === "googleMapsAPIKey"
-      );
-      if (apiKeyAttr && "value" in apiKeyAttr) {
-        googleMapsAPIKey = String(apiKeyAttr.value);
-      }
-    }
-
-    // Optional: Check attributes as a fallback for information
-    if (!googleMapsAPIKey) {
-      const apiKeyAttr = item.attributes.find(
-        (attr) => attr && "value" in attr && attr.id === "googleMapsAPIKey"
-      );
-      if (apiKeyAttr) {
-        googleMapsAPIKey = String((apiKeyAttr as any).value);
-      }
-    }
     return numberCoordinate;
   });
 
   return {
     coordinates,
-    googleMapsAPIKey,
   };
 };
 
@@ -120,7 +93,7 @@ export const OverviewMap = (options: ViewOptions) => {
 
   const role = "map-coordinates";
 
-  const { coordinates, googleMapsAPIKey } = getMapData(
+  const { coordinates } = getMapData(
     odi?.dataBinding[0].items ?? []
   );
 
@@ -214,11 +187,6 @@ export const OverviewMap = (options: ViewOptions) => {
     );
   };
 
-  // Add a local state for the API key input
-  const [apiKeyInput, setApiKeyInput] = useState(
-    process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""
-  );
-
   // Now use conditional rendering for the UI, not for hook calls
   if (!hasValidCoordinates) {
     return (
@@ -281,64 +249,110 @@ export const OverviewMap = (options: ViewOptions) => {
     );
   }
 
+  // Fix Leaflet default marker icon issue in Next.js
+  useEffect(() => {
+    delete (L.Icon.Default.prototype as any)._getIconUrl;
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+    });
+  }, []);
+
+  // Custom component to add markers using useMap hook
+  const MapMarkers = () => {
+    const map = useMap();
+    const markersRef = useRef<L.Marker[]>([]);
+
+    useEffect(() => {
+      // Clear existing markers
+      markersRef.current.forEach(marker => marker.remove());
+      markersRef.current = [];
+
+      // Add new markers
+      coordinates.forEach((position, index) => {
+        if (!position) return;
+
+        const item = options.items[index];
+
+        // Create a div element for the marker content
+        const markerElement = document.createElement('div');
+        markerElement.className = 'custom-meridian-marker-wrapper';
+
+        // Render the MeridianItem as HTML string
+        markerElement.innerHTML = renderToString(
+          <div className="w-fit max-w-[300px]">
+            <MeridianItem
+              item={item}
+              options={options}
+              index={index}
+              itemView={options.overview.itemView}
+            />
+          </div>
+        );
+
+        // Create custom divIcon with the rendered content
+        const customIcon = L.divIcon({
+          className: 'custom-pill-marker',
+          html: markerElement.innerHTML,
+          iconSize: [300, 100],
+          iconAnchor: [150, 50],
+        });
+
+        // Create and add marker to map
+        const marker = L.marker([position.lat, position.lng], {
+          icon: customIcon,
+        }).addTo(map);
+
+        // Add hover effects
+        marker.on('mouseover', () => {
+          setHoveredItemId(item?.itemId ?? "");
+          const element = marker.getElement();
+          if (element) {
+            element.style.transform = 'scale(1.1)';
+            element.style.zIndex = '1000';
+            element.style.transition = 'transform 0.2s ease';
+          }
+        });
+
+        marker.on('mouseout', () => {
+          setHoveredItemId("");
+          const element = marker.getElement();
+          if (element) {
+            element.style.transform = 'scale(1)';
+            element.style.zIndex = '1';
+          }
+        });
+
+        markersRef.current.push(marker);
+      });
+
+      // Cleanup on unmount
+      return () => {
+        markersRef.current.forEach(marker => marker.remove());
+      };
+    }, [map, coordinates, options.items]);
+
+    return null;
+  };
+
   // If we have valid coordinates, render the map
   return (
     <div className="w-full h-full flex flex-col items-center py-8 px-4">
-      <div className="w-full h-[90vh]">
-        <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ""}>
-          <Map
-            key={"map" + mapOverview.id}
-            mapId={"311ade41f7abdcb7"}
-            style={{
-              width: "100%",
-              height: "100%",
-            }}
-            defaultCenter={defaultCenter}
-            defaultZoom={defaultZoom}
-          >
-            {coordinates &&
-              options.items.map((item, index) => {
-                const position = coordinates.at(index);
-                return (
-                  <AdvancedMarker
-                    key={`${item?.itemId}-${index}`}
-                    position={position}
-                    zIndex={hoveredItemId === item?.itemId ? 6 : 3}
-                  >
-                    <div
-                      className={`w-[fit-content] max-w-[500px] bg-white border border-gray-400 rounded-2xl shadow-md shadow-black/40
-                      transition ${
-                        detailToOpen && !highlightAttributes
-                          ? "hover:scale-[1.12] active:scale-[1]"
-                          : ""
-                      }
-                      `}
-                      onMouseDown={(e) => e.stopPropagation()}
-                      onWheel={(e) => {
-                        const detailItem = document.getElementById(
-                          `map-item-${item?.itemId}`
-                        );
-                        if (
-                          detailItem &&
-                          detailItem.scrollHeight > detailItem.clientHeight
-                        ) {
-                          e.stopPropagation();
-                        }
-                      }}
-                      onMouseOver={() => setHoveredItemId(item?.itemId ?? "")}
-                    >
-                      <MeridianItem
-                        item={item}
-                        options={options}
-                        index={index}
-                        itemView={options.overview.itemView}
-                      />
-                    </div>
-                  </AdvancedMarker>
-                );
-              })}
-          </Map>
-        </APIProvider>
+      <div className="w-full h-[90vh] rounded-lg overflow-hidden">
+        <MapContainer
+          key={"map" + mapOverview.id}
+          center={[defaultCenter.lat, defaultCenter.lng]}
+          zoom={defaultZoom}
+          style={{ width: "100%", height: "100%" }}
+          scrollWheelZoom={true}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <MapMarkers />
+        </MapContainer>
       </div>
     </div>
   );
