@@ -37,35 +37,39 @@ export default function Home() {
           opacity: 0.04,
         }}
       />
-      <main className="flex-1 flex flex-col items-center justify-center py-16">
-        <div className="flex flex-col-reverse items-center justify-center">
-          <div className="relative pt-[11vh] z-10 flex flex-col items-center">
-            <div className="flex items-center gap-8 justify-center select-none">
+      <main className="flex-1 flex flex-col items-center justify-center px-4 py-12 sm:py-16">
+        <div className="flex flex-col-reverse items-center justify-center w-full gap-12">
+          <div className="relative pt-[11vh] z-10 flex flex-col items-center w-full max-w-4xl">
+            <div className="flex flex-col items-center text-center gap-4 justify-center select-none md:flex-row md:items-end md:text-left md:gap-8">
               <Image
                 src="/logo.svg"
                 alt="Meridian"
                 width={144}
                 height={144}
+                className="w-24 h-24 md:w-36 md:h-36"
                 priority
+                sizes="(max-width: 768px) 96px, 144px"
               />
-              <h1 className="text-9xl tracking-[-0.07em]">Meridian</h1>
+              <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-[-0.07em] leading-[0.95]">
+                Meridian
+              </h1>
             </div>
-            <p className="mt-8">
+            <p className="mt-6 text-base sm:text-lg md:text-xl text-center md:text-left max-w-2xl">
               Malleable user interfaces for the real world.
             </p>
-            <div className="mt-8 flex items-center gap-2 bg-foreground shadow-xl  rounded-xl  font-mono text-sm">
-              <span className="text-background px-6 py-4">
+            <div className="mt-8 w-full max-w-2xl flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-0 sm:rounded-xl sm:overflow-hidden bg-foreground shadow-xl rounded-xl font-mono text-xs sm:text-sm">
+              <span className="text-background px-4 py-4 text-center sm:text-left break-all">
                 {installCommand}
               </span>
               <button
                 onClick={handleCopy}
-                className="ml-4 p-2 mr-2 hover:bg-background/10 cursor-pointer rounded transition-colors text-background"
+                className="px-4 py-2 hover:bg-background/10 cursor-pointer transition-colors text-background border-t border-background/20 sm:border-t-0 sm:border-l"
                 aria-label={copied ? 'Copied!' : 'Copy to clipboard'}
               >
                 {copied ? <CheckIcon /> : <CopyIcon />}
               </button>
             </div>
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
               <div className="relative">
                 <span className="px-8 py-3 bg-foreground/40 text-background/70 rounded-xl font-medium shadow-lg cursor-not-allowed inline-block">
                   Documentation
