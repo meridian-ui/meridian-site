@@ -110,8 +110,7 @@ export default function Home() {
         </button>
         <p>© 2025 The Meridian Team.</p>
         <p className="mt-1">
-          Code – <span className="font-medium">MIT License</span>. Paper –{' '}
-          <span className="font-medium">CC BY-NC-SA 4.0</span>.
+          Code – <span className="font-medium">MIT License</span>.
         </p>
       </footer>
     </div>
