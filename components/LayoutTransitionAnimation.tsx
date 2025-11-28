@@ -15,6 +15,12 @@ interface ItemPosition {
 
 export const LayoutTransitionAnimation = () => {
   const [currentLayout, setCurrentLayout] = useState<LayoutType>("grid");
+  const [mounted, setMounted] = useState(false);
+
+  // Set mounted to true after hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const layouts: LayoutType[] = ["grid", "list", "map"];
@@ -29,7 +35,9 @@ export const LayoutTransitionAnimation = () => {
   }, []);
 
   // Define positions for each item in each layout
+  // Use consistent fallback values during SSR and initial hydration
   function vh(percent: number) {
+    if (!mounted) return (percent * 800) / 100; // Consistent SSR/hydration value
     const h = Math.max(
       document.documentElement.clientHeight,
       window.innerHeight || 0
@@ -38,6 +46,7 @@ export const LayoutTransitionAnimation = () => {
   }
 
   function vw(percent: number) {
+    if (!mounted) return (percent * 1200) / 100; // Consistent SSR/hydration value
     const w = Math.max(
       document.documentElement.clientWidth,
       window.innerWidth || 0

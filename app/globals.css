@@ -32,13 +32,9 @@
   font-display: swap;
 }
 
-:root {
-  --font-family-base: "Switzer", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Helvetica, Arial, sans-serif;
-}
-
 body {
   background: var(--color-background);
-  font-family: var(--font-family-base);
+  font-family: var(--font-hanken-grotesk), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
   color: var(--color-foreground);
 }

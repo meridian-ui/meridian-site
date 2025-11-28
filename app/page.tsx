@@ -1,15 +1,14 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useState } from "react";
-import CopyIcon from "@/components/CopyIcon";
-import CheckIcon from "@/components/CheckIcon";
-import { LayoutTransitionAnimation } from "@/components/LayoutTransitionAnimation";
+import Image from 'next/image';
+import { useState } from 'react';
+import CopyIcon from '@/components/CopyIcon';
+import CheckIcon from '@/components/CheckIcon';
+import { LayoutTransitionAnimation } from '@/components/LayoutTransitionAnimation';
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const installCommand = "npm install meridian";
+  const installCommand = 'npm install @meridian-ui/meridian';
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(installCommand);
@@ -17,15 +16,8 @@ export default function Home() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setMousePosition({ x: e.clientX, y: e.clientY });
-  };
-
   return (
-    <div
-      className="relative flex flex-col items-center justify-center h-screen"
-      onMouseMove={handleMouseMove}
-    >
+    <div className="relative flex flex-col items-center justify-center h-screen">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -33,7 +25,7 @@ export default function Home() {
             linear-gradient(to right, #3d4f3a 1px, transparent 1px),
             linear-gradient(to bottom, #3d4f3a 1px, transparent 1px)
           `,
-          backgroundSize: "20px 20px",
+          backgroundSize: '20px 20px',
 
           opacity: 0.04,
         }}
@@ -41,7 +33,13 @@ export default function Home() {
       <div className="flex flex-col-reverse items-center justify-center">
         <div className="relative pt-[11vh] z-10 flex flex-col items-center">
           <div className="flex items-center gap-8 justify-center select-none">
-            <img src="/logo.svg" alt="Meridian" className="h-36" />
+            <Image
+              src="/logo.svg"
+              alt="Meridian"
+              width={144}
+              height={144}
+              priority
+            />
             <h1 className="text-9xl tracking-[-0.07em]">Meridian</h1>
           </div>
           <p className="mt-8">
@@ -52,24 +50,28 @@ export default function Home() {
             <button
               onClick={handleCopy}
               className="ml-4 p-2 mr-2 hover:bg-background/10 cursor-pointer rounded transition-colors text-background"
-              aria-label={copied ? "Copied!" : "Copy to clipboard"}
+              aria-label={copied ? 'Copied!' : 'Copy to clipboard'}
             >
               {copied ? <CheckIcon /> : <CopyIcon />}
             </button>
           </div>
           <div className="mt-6 flex items-center gap-4">
-            <Link
-              href="/docs"
-              className="px-8 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-colors font-medium shadow-lg"
-            >
-              Documentation
-            </Link>
-            <Link
-              href="/examples/gallery"
-              className="px-8 py-3 border-2 border-foreground text-foreground rounded-xl hover:bg-foreground hover:text-background transition-colors font-medium"
-            >
-              Examples
-            </Link>
+            <div className="relative">
+              <span className="px-8 py-3 bg-foreground/40 text-background/70 rounded-xl font-medium shadow-lg cursor-not-allowed inline-block">
+                Documentation
+              </span>
+              <span className="absolute -top-2 -right-2 text-[10px] bg-foreground text-background px-2 py-0.5 rounded-full whitespace-nowrap">
+                Coming Soon!
+              </span>
+            </div>
+            <div className="relative">
+              <span className="px-8 py-3 border-2 border-foreground/40 text-foreground/40 rounded-xl font-medium cursor-not-allowed inline-block">
+                Examples
+              </span>
+              <span className="absolute -top-2 -right-2 text-[10px] bg-foreground text-background px-2 py-0.5 rounded-full whitespace-nowrap">
+                Coming Soon!
+              </span>
+            </div>
           </div>
         </div>
         <LayoutTransitionAnimation />
