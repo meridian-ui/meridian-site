@@ -38,7 +38,7 @@ export default function Home() {
         }}
       />
       <main className="flex-1 flex flex-col items-center justify-center px-4 py-12 sm:py-16">
-        <div className="flex flex-col-reverse items-center justify-center w-full gap-12">
+        <div className="flex flex-col-reverse items-center justify-center w-full gap-6 sm:gap-12">
           <div className="relative pt-[11vh] z-10 flex flex-col items-center w-full max-w-4xl">
             <div className="flex flex-col items-center text-center gap-4 justify-center select-none md:flex-row md:items-end md:text-left md:gap-8">
               <Image
