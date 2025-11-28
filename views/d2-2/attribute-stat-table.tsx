@@ -1,6 +1,6 @@
 
 
-import { isAttributeType, AttributeProps, useODI } from "@meridian-ui/meridian";
+import { isAttributeType, AttributeProps, useODI, FetchedAttributeValueType } from "@meridian-ui/meridian";
 
 export const AttributeJerseyNumber = ({
   attribute,
@@ -11,8 +11,10 @@ export const AttributeJerseyNumber = ({
 
   if (!attribute || attribute.type !== "stats-table") return <></>;
 
-  const teamId = item?.internalAttributes?.find(
-    (a: any) => a.id === "team"
+  const teamId = (
+    item?.internalAttributes?.find(
+      (a: any) => a.id === "team"
+    ) as FetchedAttributeValueType
   )?.value;
   const teamStyle =
     teamId === "1" ? data.team1.teamStyle : data.team2.teamStyle;
