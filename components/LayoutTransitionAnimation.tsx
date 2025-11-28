@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { CoastlineSVG } from "./CoastlineSVG";
+import { useEffect, useState } from 'react';
+import { CoastlineSVG } from './CoastlineSVG';
 
-type LayoutType = "grid" | "list" | "map";
+type LayoutType = 'grid' | 'list' | 'map';
 
 interface ItemPosition {
   x: number;
@@ -14,7 +14,7 @@ interface ItemPosition {
 }
 
 export const LayoutTransitionAnimation = () => {
-  const [currentLayout, setCurrentLayout] = useState<LayoutType>("grid");
+  const [currentLayout, setCurrentLayout] = useState<LayoutType>('grid');
   const [mounted, setMounted] = useState(false);
 
   const isMobileViewport = mounted ? window.innerWidth < 640 : false;
@@ -23,11 +23,11 @@ export const LayoutTransitionAnimation = () => {
 
   // Set mounted to true after hydration
   useEffect(() => {
-    setMounted(true);
+    queueMicrotask(() => setMounted(true));
   }, []);
 
   useEffect(() => {
-    const layouts: LayoutType[] = ["grid", "list", "map"];
+    const layouts: LayoutType[] = ['grid', 'list', 'map'];
     let currentIndex = 0;
 
     const interval = setInterval(() => {
@@ -65,7 +65,7 @@ export const LayoutTransitionAnimation = () => {
     const containerWidth = vw(containerWidthPercent);
     const containerHeight = vh(containerHeightPercent);
 
-    if (layout === "grid") {
+    if (layout === 'grid') {
       const cols = 3;
       const rows = 2;
       const row = Math.floor(itemIndex / cols);
@@ -99,7 +99,7 @@ export const LayoutTransitionAnimation = () => {
         height: itemHeight,
         borderRadius: 8,
       };
-    } else if (layout === "list") {
+    } else if (layout === 'list') {
       const itemHeight = 48;
       const gap = 8;
       const padding = 16; // Equal padding on left and right
@@ -141,86 +141,86 @@ export const LayoutTransitionAnimation = () => {
     width: number,
     height: number
   ) => {
-    if (currentLayout === "map" || width === 0 || height === 0) return null;
+    if (currentLayout === 'map' || width === 0 || height === 0) return null;
 
-    if (currentLayout === "grid") {
+    if (currentLayout === 'grid') {
       // Show thumbnail and lines for grid
       return (
         <>
           <div
             style={{
-              width: "100%",
-              height: "60%",
+              width: '100%',
+              height: '60%',
               // backgroundColor: "#e8dab2",
-              backgroundColor: "#BCC9C1",
-              borderRadius: "4px",
-              marginBottom: "6px",
+              backgroundColor: '#BCC9C1',
+              borderRadius: '4px',
+              marginBottom: '6px',
             }}
           />
           <div
             style={{
-              width: "80%",
-              height: "4px",
-              backgroundColor: "#3d4f3a",
-              borderRadius: "2px",
-              marginBottom: "3px",
+              width: '80%',
+              height: '4px',
+              backgroundColor: '#3d4f3a',
+              borderRadius: '2px',
+              marginBottom: '3px',
             }}
           />
           <div
             style={{
-              width: "60%",
-              height: "4px",
-              backgroundColor: "#3d4f3a",
-              borderRadius: "2px",
+              width: '60%',
+              height: '4px',
+              backgroundColor: '#3d4f3a',
+              borderRadius: '2px',
               opacity: 0.5,
             }}
           />
         </>
       );
-    } else if (currentLayout === "list") {
+    } else if (currentLayout === 'list') {
       // Show horizontal layout for list
       return (
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
 
-            height: "100%",
+            height: '100%',
           }}
         >
           <div
             style={{
-              width: "32px",
-              height: "32px",
+              width: '32px',
+              height: '32px',
               // backgroundColor: "#e8dab2",
-              backgroundColor: "#BCC9C1",
-              borderRadius: "4px",
+              backgroundColor: '#BCC9C1',
+              borderRadius: '4px',
               flexShrink: 0,
             }}
           />
           <div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "4px",
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '4px',
               flex: 1,
             }}
           >
             <div
               style={{
-                width: "70%",
-                height: "4px",
-                backgroundColor: "#3d4f3a",
-                borderRadius: "2px",
+                width: '70%',
+                height: '4px',
+                backgroundColor: '#3d4f3a',
+                borderRadius: '2px',
               }}
             />
             <div
               style={{
-                width: "50%",
-                height: "4px",
-                backgroundColor: "#3d4f3a",
-                borderRadius: "2px",
+                width: '50%',
+                height: '4px',
+                backgroundColor: '#3d4f3a',
+                borderRadius: '2px',
                 opacity: 0.5,
               }}
             />
@@ -235,42 +235,42 @@ export const LayoutTransitionAnimation = () => {
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "16px",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '16px',
       }}
     >
       <div
         style={{
           width: `${containerWidthPercent}vw`,
           height: `${containerHeightPercent}vh`,
-          backgroundColor: "#eff4f1",
-          border: "2px solid #3d4f3a",
-          borderRadius: "12px",
-          padding: "16px",
-          boxShadow: "8px 8px 0 0 #3d4f3a",
-          overflow: "hidden",
-          position: "relative",
-          transition: "background-color 0.6s ease",
+          backgroundColor: '#eff4f1',
+          border: '2px solid #3d4f3a',
+          borderRadius: '12px',
+          padding: '16px',
+          boxShadow: '8px 8px 0 0 #3d4f3a',
+          overflow: 'hidden',
+          position: 'relative',
+          transition: 'background-color 0.6s ease',
         }}
       >
         {/* Coastline - only show in map mode */}
         <svg
           style={{
-            position: "absolute",
+            position: 'absolute',
             top: 0,
             right: 0,
-            width: "80%",
-            height: "100%",
-            opacity: currentLayout === "map" ? 1 : 0,
+            width: '80%',
+            height: '100%',
+            opacity: currentLayout === 'map' ? 1 : 0,
             transform:
-              currentLayout === "map"
-                ? "scale(1) translateX(0)"
-                : "scale(0.8) translateX(20%)",
+              currentLayout === 'map'
+                ? 'scale(1) translateX(0)'
+                : 'scale(0.8) translateX(20%)',
             transition:
-              "opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-            pointerEvents: "none",
+              'opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+            pointerEvents: 'none',
           }}
           viewBox="0 0 115 316"
           preserveAspectRatio="xMaxYMid slice"
@@ -283,26 +283,26 @@ export const LayoutTransitionAnimation = () => {
             <div
               key={i}
               style={{
-                position: "absolute",
+                position: 'absolute',
                 left: `${position.x}px`,
                 top: `${position.y}px`,
                 width: `${position.width}px`,
                 height: `${position.height}px`,
                 backgroundColor:
-                  currentLayout === "map" ? "#3d4f3a" : "#eff4f1",
+                  currentLayout === 'map' ? '#3d4f3a' : '#eff4f1',
                 border:
-                  currentLayout === "map"
-                    ? "3px solid #fffef8"
-                    : "2px solid #3d4f3a",
+                  currentLayout === 'map'
+                    ? '3px solid #fffef8'
+                    : '2px solid #3d4f3a',
                 borderRadius: `${position.borderRadius}px`,
-                transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
                 boxShadow:
-                  currentLayout === "map"
-                    ? "0 2px 8px rgba(61, 79, 58, 0.3)"
-                    : "none",
-                display: "flex",
-                flexDirection: "column",
-                padding: currentLayout === "map" ? "0" : "8px",
+                  currentLayout === 'map'
+                    ? '0 2px 8px rgba(61, 79, 58, 0.3)'
+                    : 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                padding: currentLayout === 'map' ? '0' : '8px',
                 opacity: position.width === 0 ? 0 : 1,
               }}
             >

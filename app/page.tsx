@@ -39,8 +39,8 @@ export default function Home() {
       />
       <main className="flex-1 flex flex-col items-center justify-center px-4 py-12 sm:py-16">
         <div className="flex flex-col-reverse items-center justify-center w-full gap-6 sm:gap-12">
-          <div className="relative pt-[11vh] z-10 flex flex-col items-center w-full max-w-4xl">
-            <div className="flex flex-col items-center text-center gap-4 justify-center select-none md:flex-row md:items-end md:text-left md:gap-8">
+          <div className="relative pt-[5vh] md:pt-[8vh] z-10 flex flex-col justify-center items-center w-full max-w-4xl">
+            <div className="flex flex-col items-center justify-center text-center gap-4 select-none md:flex-row md:text-left md:gap-8">
               <Image
                 src="/logo.svg"
                 alt="Meridian"
@@ -50,14 +50,14 @@ export default function Home() {
                 priority
                 sizes="(max-width: 768px) 96px, 144px"
               />
-              <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-[-0.07em] leading-[0.95]">
+              <h1 className="font-medium text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-[-0.07em] leading-[0.95]">
                 Meridian
               </h1>
             </div>
             <p className="mt-6 text-base sm:text-lg md:text-xl text-center md:text-left max-w-2xl">
               Malleable user interfaces for the real world.
             </p>
-            <div className="mt-8 w-full max-w-2xl flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-0 sm:rounded-xl sm:overflow-hidden bg-foreground shadow-xl rounded-xl font-mono text-xs sm:text-sm">
+            <div className="mt-8 max-w-2xl flex flex-col sm:flex-row sm:items-center sm:rounded-xl sm:overflow-hidden bg-foreground shadow-xl rounded-xl font-mono text-xs sm:text-sm">
               <span className="text-background px-4 py-4 text-center sm:text-left break-all">
                 {installCommand}
               </span>
@@ -69,17 +69,17 @@ export default function Home() {
                 {copied ? <CheckIcon /> : <CopyIcon />}
               </button>
             </div>
-            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4 w-full max-w-md">
-              <div className="relative w-full sm:w-56">
-                <span className="block w-full text-center px-8 py-3 bg-foreground/40 text-background/70 rounded-xl font-medium shadow-lg cursor-not-allowed">
+            <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:gap-4 w-full max-w-md">
+              <div className="relative w-56 sm:w-56">
+                <span className="block w-50 text-center px-8 py-3 bg-foreground/40 text-background/70 rounded-xl font-medium shadow-lg cursor-not-allowed">
                   Documentation
                 </span>
                 <span className="absolute -top-2 -right-2 text-[10px] bg-foreground text-background px-2 py-0.5 rounded-full whitespace-nowrap">
                   Coming Soon
                 </span>
               </div>
-              <div className="relative w-full sm:w-56">
-                <span className="block w-full text-center px-8 py-3 border-2 border-foreground/40 text-foreground/40 rounded-xl font-medium cursor-not-allowed">
+              <div className="relative w-56 sm:w-56">
+                <span className="block w-50 text-center px-8 py-3 border-2 border-foreground/40 text-foreground/40 rounded-xl font-medium cursor-not-allowed">
                   Examples
                 </span>
                 <span className="absolute -top-2 -right-2 text-[10px] bg-foreground text-background px-2 py-0.5 rounded-full whitespace-nowrap">
