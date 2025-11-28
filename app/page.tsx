@@ -9,7 +9,7 @@ import { LayoutTransitionAnimation } from '@/components/LayoutTransitionAnimatio
 export default function Home() {
   const [copied, setCopied] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
-  const installCommand = 'npm install @meridian-ui/meridian';
+  const installCommand = 'npm install meridian-ui';
   const contactEmail = 'bdmin@ucsd.edu';
 
   const handleCopy = async () => {
