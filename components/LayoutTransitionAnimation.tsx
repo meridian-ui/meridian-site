@@ -17,6 +17,10 @@ export const LayoutTransitionAnimation = () => {
   const [currentLayout, setCurrentLayout] = useState<LayoutType>("grid");
   const [mounted, setMounted] = useState(false);
 
+  const isMobileViewport = mounted ? window.innerWidth < 640 : false;
+  const containerWidthPercent = isMobileViewport ? 80 : 30;
+  const containerHeightPercent = 30;
+
   // Set mounted to true after hydration
   useEffect(() => {
     setMounted(true);
@@ -58,8 +62,8 @@ export const LayoutTransitionAnimation = () => {
     itemIndex: number,
     layout: LayoutType
   ): ItemPosition => {
-    const containerWidth = vw(30);
-    const containerHeight = vh(30);
+    const containerWidth = vw(containerWidthPercent);
+    const containerHeight = vh(containerHeightPercent);
 
     if (layout === "grid") {
       const cols = 3;
@@ -239,8 +243,8 @@ export const LayoutTransitionAnimation = () => {
     >
       <div
         style={{
-          width: "30vw",
-          height: "30vh",
+          width: `${containerWidthPercent}vw`,
+          height: `${containerHeightPercent}vh`,
           backgroundColor: "#eff4f1",
           border: "2px solid #3d4f3a",
           borderRadius: "12px",
