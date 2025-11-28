@@ -69,21 +69,21 @@ export default function Home() {
                 {copied ? <CheckIcon /> : <CopyIcon />}
               </button>
             </div>
-            <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:gap-4 w-full max-w-md">
-              <div className="relative w-56 sm:w-56">
-                <span className="block w-50 text-center px-8 py-3 bg-foreground/40 text-background/70 rounded-xl font-medium shadow-lg cursor-not-allowed">
+            <div className="mt-6 flex items-center gap-4">
+              <div className="relative overflow-visible">
+                <span className="block text-center px-8 py-3 bg-foreground/40 text-background/70 rounded-xl font-medium shadow-lg cursor-not-allowed">
                   Documentation
                 </span>
-                <span className="absolute -top-2 -right-2 text-[10px] bg-foreground text-background px-2 py-0.5 rounded-full whitespace-nowrap">
-                  Coming Soon
+                <span className="absolute -top-2 -right-2 text-[10px] bg-foreground text-background px-2 py-0.5 rounded-full whitespace-nowrap pointer-events-none">
+                  Coming Soon!
                 </span>
               </div>
-              <div className="relative w-56 sm:w-56">
-                <span className="block w-50 text-center px-8 py-3 border-2 border-foreground/40 text-foreground/40 rounded-xl font-medium cursor-not-allowed">
+              <div className="relative overflow-visible">
+                <span className="block text-center px-8 py-3 border-2 border-foreground/40 text-foreground/40 rounded-xl font-medium cursor-not-allowed">
                   Examples
                 </span>
-                <span className="absolute -top-2 -right-2 text-[10px] bg-foreground text-background px-2 py-0.5 rounded-full whitespace-nowrap">
-                  Coming Soon
+                <span className="absolute -top-2 -right-2 text-[10px] bg-foreground text-background px-2 py-0.5 rounded-full whitespace-nowrap pointer-events-none">
+                  Coming Soon!
                 </span>
               </div>
             </div>
