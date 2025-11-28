@@ -12,7 +12,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Meridian',
-  description: 'Malleable user interfaces for the real world.',
+  description: 'Make any overview-detail interface malleable.',
 };
 
 export default function RootLayout({

@@ -55,7 +55,7 @@ export default function Home() {
               </h1>
             </div>
             <p className="mt-6 text-base sm:text-lg md:text-xl text-center md:text-left max-w-2xl">
-              Malleable user interfaces for the real world.
+              Make any overview-detail interface malleable.
             </p>
             <div className="mt-8 max-w-2xl flex flex-col sm:flex-row sm:items-center sm:rounded-xl sm:overflow-hidden bg-foreground shadow-xl rounded-xl font-mono text-xs sm:text-sm">
               <span className="text-background px-4 py-4 text-center sm:text-left break-all">
