@@ -75,7 +75,7 @@ export default function Home() {
                   Documentation
                 </span>
                 <span className="absolute -top-2 -right-2 text-[10px] bg-foreground text-background px-2 py-0.5 rounded-full whitespace-nowrap pointer-events-none">
-                  Coming Soon!
+                  Coming Soon
                 </span>
               </div>
               <div className="relative overflow-visible">
@@ -83,7 +83,7 @@ export default function Home() {
                   Examples
                 </span>
                 <span className="absolute -top-2 -right-2 text-[10px] bg-foreground text-background px-2 py-0.5 rounded-full whitespace-nowrap pointer-events-none">
-                  Coming Soon!
+                  Coming Soon
                 </span>
               </div>
             </div>
