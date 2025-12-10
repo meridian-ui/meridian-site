@@ -11,7 +11,7 @@
   "dependencies": {
     "@meridian-ui/meridian": "^1.0.3",
     "interactjs": "^1.10.27",
-    "next": "15.2.3",
+    "next": "15.2.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-zoom-pan-pinch": "^3.7.0",
