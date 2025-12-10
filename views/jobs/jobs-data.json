@@ -1,0 +1,416 @@
+{
+  "jobs": [
+    {
+      "id": "job-001",
+      "title": "Senior Frontend Engineer",
+      "company": "TechFlow",
+      "companyLogo": "https://api.dicebear.com/7.x/initials/svg?seed=TechFlow&backgroundColor=6366f1",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "USA",
+        "latitude": 37.7749,
+        "longitude": -122.4194,
+        "remote": "Hybrid"
+      },
+      "salary": {
+        "min": 140000,
+        "max": 180000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "type": "Full-time",
+      "level": "Senior",
+      "department": "Engineering",
+      "postedDate": "2025-12-01",
+      "description": "We're seeking an experienced Frontend Engineer to join our growing team. You'll work on building elegant, performant user interfaces using modern web technologies.",
+      "requirements": [
+        "5+ years of experience with React and TypeScript",
+        "Strong understanding of web performance optimization",
+        "Experience with state management libraries (Redux, Zustand, etc.)",
+        "Excellent communication and collaboration skills"
+      ],
+      "responsibilities": [
+        "Build and maintain scalable frontend applications",
+        "Collaborate with designers and backend engineers",
+        "Mentor junior developers",
+        "Participate in code reviews and technical discussions"
+      ],
+      "benefits": [
+        "Competitive salary and equity",
+        "Health, dental, and vision insurance",
+        "Unlimited PTO",
+        "Remote work flexibility"
+      ],
+      "skills": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "Git"
+      ],
+      "applicants": 127
+    },
+    {
+      "id": "job-002",
+      "title": "Product Designer",
+      "company": "DesignCo",
+      "companyLogo": "https://api.dicebear.com/7.x/initials/svg?seed=DesignCo&backgroundColor=ec4899",
+      "location": {
+        "city": "New York",
+        "state": "NY",
+        "country": "USA",
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "remote": "Remote"
+      },
+      "salary": {
+        "min": 120000,
+        "max": 160000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "type": "Full-time",
+      "level": "Mid-level",
+      "department": "Design",
+      "postedDate": "2025-12-03",
+      "description": "Join our design team to create beautiful, user-centered products that millions of people use every day.",
+      "requirements": [
+        "3+ years of product design experience",
+        "Strong portfolio demonstrating UX/UI skills",
+        "Proficiency in Figma",
+        "Experience with design systems"
+      ],
+      "responsibilities": [
+        "Design user flows, wireframes, and high-fidelity mockups",
+        "Conduct user research and usability testing",
+        "Collaborate with engineering and product teams",
+        "Maintain and evolve the design system"
+      ],
+      "benefits": [
+        "Competitive compensation package",
+        "Professional development budget",
+        "Home office stipend",
+        "Flexible working hours"
+      ],
+      "skills": [
+        "Figma",
+        "User Research",
+        "Prototyping",
+        "Design Systems",
+        "Adobe Creative Suite"
+      ],
+      "applicants": 89
+    },
+    {
+      "id": "job-003",
+      "title": "Backend Engineer",
+      "company": "DataSphere",
+      "companyLogo": "https://api.dicebear.com/7.x/initials/svg?seed=DataSphere&backgroundColor=10b981",
+      "location": {
+        "city": "Austin",
+        "state": "TX",
+        "country": "USA",
+        "latitude": 30.2672,
+        "longitude": -97.7431,
+        "remote": "Hybrid"
+      },
+      "salary": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "type": "Full-time",
+      "level": "Senior",
+      "department": "Engineering",
+      "postedDate": "2025-11-28",
+      "description": "Build scalable backend systems that power our data analytics platform. Work with cutting-edge technologies and solve complex distributed systems challenges.",
+      "requirements": [
+        "5+ years of backend development experience",
+        "Strong knowledge of Python or Go",
+        "Experience with microservices architecture",
+        "Familiarity with cloud platforms (AWS, GCP, or Azure)"
+      ],
+      "responsibilities": [
+        "Design and implement RESTful APIs",
+        "Optimize database queries and improve system performance",
+        "Implement monitoring and alerting systems",
+        "Write comprehensive tests and documentation"
+      ],
+      "benefits": [
+        "Stock options",
+        "401k matching",
+        "Gym membership",
+        "Learning and development opportunities"
+      ],
+      "skills": [
+        "Python",
+        "Go",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ],
+      "applicants": 156
+    },
+    {
+      "id": "job-004",
+      "title": "UX Researcher",
+      "company": "InsightLabs",
+      "companyLogo": "https://api.dicebear.com/7.x/initials/svg?seed=InsightLabs&backgroundColor=f59e0b",
+      "location": {
+        "city": "Seattle",
+        "state": "WA",
+        "country": "USA",
+        "latitude": 47.6062,
+        "longitude": -122.3321,
+        "remote": "Remote"
+      },
+      "salary": {
+        "min": 110000,
+        "max": 145000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "type": "Full-time",
+      "level": "Mid-level",
+      "department": "Research",
+      "postedDate": "2025-12-02",
+      "description": "Lead user research initiatives to inform product strategy and design decisions. Work closely with cross-functional teams to deliver actionable insights.",
+      "requirements": [
+        "3+ years of UX research experience",
+        "Experience with both qualitative and quantitative research methods",
+        "Strong analytical and presentation skills",
+        "Bachelor's degree in HCI, Psychology, or related field"
+      ],
+      "responsibilities": [
+        "Plan and conduct user research studies",
+        "Analyze research data and synthesize findings",
+        "Present insights to stakeholders",
+        "Collaborate with designers and product managers"
+      ],
+      "benefits": [
+        "Comprehensive health benefits",
+        "Parental leave",
+        "Conference budget",
+        "Remote-first culture"
+      ],
+      "skills": [
+        "User Research",
+        "Qualitative Analysis",
+        "Quantitative Analysis",
+        "Usability Testing",
+        "Survey Design"
+      ],
+      "applicants": 64
+    },
+    {
+      "id": "job-005",
+      "title": "DevOps Engineer",
+      "company": "CloudNine",
+      "companyLogo": "https://api.dicebear.com/7.x/initials/svg?seed=CloudNine&backgroundColor=8b5cf6",
+      "location": {
+        "city": "Denver",
+        "state": "CO",
+        "country": "USA",
+        "latitude": 39.7392,
+        "longitude": -104.9903,
+        "remote": "Hybrid"
+      },
+      "salary": {
+        "min": 135000,
+        "max": 175000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "type": "Full-time",
+      "level": "Senior",
+      "department": "Infrastructure",
+      "postedDate": "2025-11-30",
+      "description": "Join our infrastructure team to build and maintain reliable, scalable cloud infrastructure. Automate everything and help teams ship faster.",
+      "requirements": [
+        "5+ years of DevOps/SRE experience",
+        "Strong knowledge of CI/CD pipelines",
+        "Experience with Infrastructure as Code (Terraform, CloudFormation)",
+        "Proficiency in scripting languages (Bash, Python)"
+      ],
+      "responsibilities": [
+        "Manage cloud infrastructure and deployments",
+        "Build and maintain CI/CD pipelines",
+        "Monitor system performance and reliability",
+        "Respond to incidents and perform root cause analysis"
+      ],
+      "benefits": [
+        "Competitive salary and bonuses",
+        "Comprehensive insurance",
+        "Stock options",
+        "Work-life balance"
+      ],
+      "skills": [
+        "Terraform",
+        "Kubernetes",
+        "CI/CD",
+        "AWS",
+        "Python",
+        "Monitoring"
+      ],
+      "applicants": 98
+    },
+    {
+      "id": "job-006",
+      "title": "Mobile Developer",
+      "company": "AppCrafters",
+      "companyLogo": "https://api.dicebear.com/7.x/initials/svg?seed=AppCrafters&backgroundColor=ef4444",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "country": "USA",
+        "latitude": 34.0522,
+        "longitude": -118.2437,
+        "remote": "On-site"
+      },
+      "salary": {
+        "min": 125000,
+        "max": 165000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "type": "Full-time",
+      "level": "Mid-level",
+      "department": "Engineering",
+      "postedDate": "2025-12-04",
+      "description": "Build native mobile experiences for iOS and Android. Work on features used by millions of users worldwide.",
+      "requirements": [
+        "3+ years of mobile development experience",
+        "Strong knowledge of React Native or Flutter",
+        "Experience with native iOS or Android development",
+        "Understanding of mobile app architecture"
+      ],
+      "responsibilities": [
+        "Develop and maintain mobile applications",
+        "Optimize app performance",
+        "Implement new features based on user feedback",
+        "Collaborate with backend and design teams"
+      ],
+      "benefits": [
+        "Health and wellness programs",
+        "Equity compensation",
+        "Free meals and snacks",
+        "Professional growth opportunities"
+      ],
+      "skills": [
+        "React Native",
+        "iOS",
+        "Android",
+        "JavaScript",
+        "Swift",
+        "Kotlin"
+      ],
+      "applicants": 112
+    },
+    {
+      "id": "job-007",
+      "title": "Data Scientist",
+      "company": "AnalyticsPro",
+      "companyLogo": "https://api.dicebear.com/7.x/initials/svg?seed=AnalyticsPro&backgroundColor=06b6d4",
+      "location": {
+        "city": "Boston",
+        "state": "MA",
+        "country": "USA",
+        "latitude": 42.3601,
+        "longitude": -71.0589,
+        "remote": "Remote"
+      },
+      "salary": {
+        "min": 145000,
+        "max": 190000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "type": "Full-time",
+      "level": "Senior",
+      "department": "Data Science",
+      "postedDate": "2025-11-29",
+      "description": "Apply machine learning and statistical analysis to solve complex business problems. Turn data into actionable insights.",
+      "requirements": [
+        "PhD or Master's in Statistics, Computer Science, or related field",
+        "5+ years of data science experience",
+        "Strong knowledge of Python and SQL",
+        "Experience with ML frameworks (TensorFlow, PyTorch)"
+      ],
+      "responsibilities": [
+        "Build and deploy machine learning models",
+        "Analyze large datasets to identify trends and patterns",
+        "Collaborate with product teams on data-driven features",
+        "Communicate findings to non-technical stakeholders"
+      ],
+      "benefits": [
+        "Top-tier compensation",
+        "Research budget",
+        "Conference attendance",
+        "Flexible schedule"
+      ],
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "SQL",
+        "TensorFlow",
+        "Statistics",
+        "Data Visualization"
+      ],
+      "applicants": 203
+    },
+    {
+      "id": "job-008",
+      "title": "Product Manager",
+      "company": "InnovateCorp",
+      "companyLogo": "https://api.dicebear.com/7.x/initials/svg?seed=InnovateCorp&backgroundColor=3b82f6",
+      "location": {
+        "city": "Chicago",
+        "state": "IL",
+        "country": "USA",
+        "latitude": 41.8781,
+        "longitude": -87.6298,
+        "remote": "Hybrid"
+      },
+      "salary": {
+        "min": 150000,
+        "max": 200000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "type": "Full-time",
+      "level": "Senior",
+      "department": "Product",
+      "postedDate": "2025-12-05",
+      "description": "Drive product strategy and execution for our flagship products. Work with engineering, design, and business teams to deliver value to customers.",
+      "requirements": [
+        "5+ years of product management experience",
+        "Strong analytical and strategic thinking skills",
+        "Experience with agile development methodologies",
+        "Excellent communication and leadership abilities"
+      ],
+      "responsibilities": [
+        "Define product roadmap and strategy",
+        "Prioritize features based on customer needs and business goals",
+        "Work with cross-functional teams to ship products",
+        "Analyze product metrics and iterate based on data"
+      ],
+      "benefits": [
+        "Equity package",
+        "Unlimited vacation",
+        "Health and dental coverage",
+        "Team retreats"
+      ],
+      "skills": [
+        "Product Strategy",
+        "Agile",
+        "Data Analysis",
+        "Stakeholder Management",
+        "Roadmapping"
+      ],
+      "applicants": 145
+    }
+  ]
+}
